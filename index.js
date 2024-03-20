@@ -38,8 +38,7 @@ else {
     mess = "Choose right difficulty";
 }
 async function startGame() {
-    // cNum = Math.round(Math.random() * cNum);
-    cNum = 3;
+    cNum = Math.round(Math.random() * cNum);
     let user = await inquirer.prompt([
         { message: mess, type: "number", name: "num" },
     ]);
