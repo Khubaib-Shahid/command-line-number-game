@@ -38,11 +38,11 @@ else {
     mess = "Choose right difficulty";
 }
 async function startGame() {
-    cNum = Math.round(Math.random() * cNum);
+    let rNum = Math.round(Math.random() * cNum);
     let user = await inquirer.prompt([
         { message: mess, type: "number", name: "num" },
     ]);
-    if (user.num === cNum) {
+    if (user.num === rNum) {
         if (bonus === 3) {
             lives += 1;
             bonus = 0;
@@ -54,7 +54,7 @@ async function startGame() {
     }
     else {
         lives -= 1;
-        console.log(`You lost number is ${cNum}`, `\nlives : ${lives}`, `\nScore : ${score}`);
+        console.log(`You lost number is ${rNum}`, `\nlives : ${lives}`, `\nScore : ${score}`);
         playAgain();
     }
 }
